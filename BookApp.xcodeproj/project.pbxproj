@@ -8,12 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		C93554BF1EEBD12400BFD19F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93554BE1EEBD12400BFD19F /* AppDelegate.swift */; };
-		C93554C11EEBD12400BFD19F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93554C01EEBD12400BFD19F /* ViewController.swift */; };
 		C93554C41EEBD12400BFD19F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C93554C21EEBD12400BFD19F /* Main.storyboard */; };
 		C93554C61EEBD12400BFD19F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C93554C51EEBD12400BFD19F /* Assets.xcassets */; };
 		C93554C91EEBD12400BFD19F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C93554C71EEBD12400BFD19F /* LaunchScreen.storyboard */; };
 		C93554D41EEBD12400BFD19F /* BookAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93554D31EEBD12400BFD19F /* BookAppTests.swift */; };
 		C93554DF1EEBD12400BFD19F /* BookAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93554DE1EEBD12400BFD19F /* BookAppUITests.swift */; };
+		C93554F01EEBDACF00BFD19F /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C93554EF1EEBDACF00BFD19F /* SWRevealViewController.m */; };
+		C93554F31EEBDC6700BFD19F /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93554F21EEBDC6700BFD19F /* MenuViewController.swift */; };
+		C93554F51EEBDC8300BFD19F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93554F41EEBDC8300BFD19F /* MainViewController.swift */; };
+		C93554F71EEBE69900BFD19F /* DroidSansTamilBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C93554F61EEBE69900BFD19F /* DroidSansTamilBold.ttf */; };
+		C93554FA1EEC07B100BFD19F /* TopBarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93554F91EEC07B100BFD19F /* TopBarCollectionViewCell.swift */; };
+		C99987471EED773C004EBA1C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99987461EED773C004EBA1C /* LoginViewController.swift */; };
+		C99987491EED79E2004EBA1C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99987481EED79E2004EBA1C /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +42,6 @@
 /* Begin PBXFileReference section */
 		C93554BB1EEBD12400BFD19F /* BookApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C93554BE1EEBD12400BFD19F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C93554C01EEBD12400BFD19F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C93554C31EEBD12400BFD19F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C93554C51EEBD12400BFD19F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C93554C81EEBD12400BFD19F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +52,15 @@
 		C93554DA1EEBD12400BFD19F /* BookAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C93554DE1EEBD12400BFD19F /* BookAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAppUITests.swift; sourceTree = "<group>"; };
 		C93554E01EEBD12400BFD19F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C93554ED1EEBDACE00BFD19F /* BookApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BookApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		C93554EE1EEBDACF00BFD19F /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		C93554EF1EEBDACF00BFD19F /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		C93554F21EEBDC6700BFD19F /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		C93554F41EEBDC8300BFD19F /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		C93554F61EEBE69900BFD19F /* DroidSansTamilBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DroidSansTamilBold.ttf; sourceTree = "<group>"; };
+		C93554F91EEC07B100BFD19F /* TopBarCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopBarCollectionViewCell.swift; sourceTree = "<group>"; };
+		C99987461EED773C004EBA1C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C99987481EED79E2004EBA1C /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +111,15 @@
 		C93554BD1EEBD12400BFD19F /* BookApp */ = {
 			isa = PBXGroup;
 			children = (
+				C93554F81EEC078E00BFD19F /* Custom Cells */,
+				C93554EC1EEBDAA600BFD19F /* SWRevealViewController */,
+				C93554F11EEBDBEA00BFD19F /* ViewControllers */,
 				C93554BE1EEBD12400BFD19F /* AppDelegate.swift */,
-				C93554C01EEBD12400BFD19F /* ViewController.swift */,
 				C93554C21EEBD12400BFD19F /* Main.storyboard */,
 				C93554C51EEBD12400BFD19F /* Assets.xcassets */,
 				C93554C71EEBD12400BFD19F /* LaunchScreen.storyboard */,
 				C93554CA1EEBD12400BFD19F /* Info.plist */,
+				C93554F61EEBE69900BFD19F /* DroidSansTamilBold.ttf */,
 			);
 			path = BookApp;
 			sourceTree = "<group>";
@@ -123,6 +140,35 @@
 				C93554E01EEBD12400BFD19F /* Info.plist */,
 			);
 			path = BookAppUITests;
+			sourceTree = "<group>";
+		};
+		C93554EC1EEBDAA600BFD19F /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C93554EE1EEBDACF00BFD19F /* SWRevealViewController.h */,
+				C93554EF1EEBDACF00BFD19F /* SWRevealViewController.m */,
+				C93554ED1EEBDACE00BFD19F /* BookApp-Bridging-Header.h */,
+			);
+			name = SWRevealViewController;
+			sourceTree = "<group>";
+		};
+		C93554F11EEBDBEA00BFD19F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C93554F21EEBDC6700BFD19F /* MenuViewController.swift */,
+				C93554F41EEBDC8300BFD19F /* MainViewController.swift */,
+				C99987461EED773C004EBA1C /* LoginViewController.swift */,
+				C99987481EED79E2004EBA1C /* RegisterViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C93554F81EEC078E00BFD19F /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C93554F91EEC07B100BFD19F /* TopBarCollectionViewCell.swift */,
+			);
+			name = "Custom Cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +240,7 @@
 					C93554BA1EEBD12400BFD19F = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 27GY4VUAF2;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					C93554CE1EEBD12400BFD19F = {
@@ -236,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C93554C91EEBD12400BFD19F /* LaunchScreen.storyboard in Resources */,
+				C93554F71EEBE69900BFD19F /* DroidSansTamilBold.ttf in Resources */,
 				C93554C61EEBD12400BFD19F /* Assets.xcassets in Resources */,
 				C93554C41EEBD12400BFD19F /* Main.storyboard in Resources */,
 			);
@@ -262,8 +310,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C93554C11EEBD12400BFD19F /* ViewController.swift in Sources */,
+				C99987471EED773C004EBA1C /* LoginViewController.swift in Sources */,
 				C93554BF1EEBD12400BFD19F /* AppDelegate.swift in Sources */,
+				C99987491EED79E2004EBA1C /* RegisterViewController.swift in Sources */,
+				C93554F31EEBDC6700BFD19F /* MenuViewController.swift in Sources */,
+				C93554F01EEBDACF00BFD19F /* SWRevealViewController.m in Sources */,
+				C93554FA1EEC07B100BFD19F /* TopBarCollectionViewCell.swift in Sources */,
+				C93554F51EEBDC8300BFD19F /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,11 +468,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 27GY4VUAF2;
 				INFOPLIST_FILE = BookApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.oms.BookApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BookApp/BookApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -428,11 +484,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 27GY4VUAF2;
 				INFOPLIST_FILE = BookApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.oms.BookApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BookApp/BookApp-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -514,6 +572,7 @@
 				C93554E51EEBD12400BFD19F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C93554E61EEBD12400BFD19F /* Build configuration list for PBXNativeTarget "BookAppTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +581,7 @@
 				C93554E81EEBD12400BFD19F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C93554E91EEBD12400BFD19F /* Build configuration list for PBXNativeTarget "BookAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +590,7 @@
 				C93554EB1EEBD12400BFD19F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
