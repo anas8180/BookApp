@@ -41,7 +41,7 @@
         <scene sceneID="knH-bB-LbF">
             <objects>
                 <navigationController id="hbg-EY-iy1" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="4dq-aU-dea">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="4dq-aU-dea">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.1137254902" green="0.070588235289999995" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
@@ -276,7 +276,7 @@
         <scene sceneID="u3A-TY-3BC">
             <objects>
                 <navigationController id="1Lc-nB-scO" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="HNg-S2-Lce">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="HNg-S2-Lce">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.1137254902" green="0.070588235289999995" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
@@ -567,7 +567,7 @@
         <scene sceneID="n8a-7c-BBU">
             <objects>
                 <navigationController id="pf8-78-7yg" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Ziv-ct-5y9">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Ziv-ct-5y9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.1137254902" green="0.070588235289999995" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
