@@ -1,17 +1,20 @@
 //
-//  MenuViewController.swift
+//  AuthorsViewController.swift
 //  BookApp
 //
-//  Created by MB Air 11 on 6/10/17.
+//  Created by MB Air 11 on 6/13/17.
 //  Copyright © 2017 oms. All rights reserved.
 //
 
 import UIKit
 
-class MenuViewController: UITableViewController,loginDelegate {
+class AuthorsViewController: UITableViewController {
 
-    @IBOutlet weak var loginBtn: UIButton!
-    @IBOutlet weak var profileImage: UIImageView!
+    var cache:NSCache<AnyObject, AnyObject>!
+    var task: URLSessionDownloadTask!
+    var session: URLSession!
+    var authorData:[AnyObject]!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,24 +23,51 @@ class MenuViewController: UITableViewController,loginDelegate {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
         tableView.tableFooterView = UIView(frame: .zero)
-        navigationController?.navigationBar.isHidden = true
-    
-        setMenuLayoutUI()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-    }
-    
-    override var prefersStatusBarHidden: Bool {
-        return true
+
+        self.cache = NSCache()
+        session = URLSession.shared
+        task = URLSessionDownloadTask()
+        authorData = []
+
+        authorAPI()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: - Call API
+    func authorAPI() {
+        
+        let url = String(AllVariables.baseUrl) + "status=allauthors"
+        let urlString = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        var request = URLRequest(url: URL(string: urlString!)!)
+        request.httpMethod = "GET"
+        
+        task = session.downloadTask(with: request, completionHandler: { (location: URL?, response: URLResponse?, error: Error?) -> Void in
+            
+            if location != nil{
+                let data:Data! = try? Data(contentsOf: location!)
+                do{
+                    let json = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves) as AnyObject
+                    if json["allauthors"] != nil {
+                        self.authorData = []
+                        self.authorData = json.value(forKey: "allauthors") as! [AnyObject]
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                    }
+                }catch{
+                    print("Error \(error)")
+                }
+            }
+        })
+        task.resume()
+    }
+
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -47,62 +77,25 @@ class MenuViewController: UITableViewController,loginDelegate {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 8
-    }
-    
-    //MARK: - Set Values for UI
-    func setMenuLayoutUI() {
-        // Check for logged in user
-        let defaults = UserDefaults.standard
         
-        if defaults.object(forKey: AllVariables.userData) == nil {
-            return
+        if authorData == nil {
+            return 0 
         }
-        let userData = defaults.object(forKey: AllVariables.userData) as! [String:String]
-        
-        if userData.isEmpty {
-            loginBtn.setTitle("உள் நுழை ", for: .normal)
-//            loginBtn.isUserInteractionEnabled = true
-        }
-        else {
-            loginBtn.setTitle(userData["username"], for: .normal)
-//            loginBtn.isUserInteractionEnabled = false
-            downloadUserImage(urlString: userData["userimage"]!)
-        }
-    }
-    
-    // MARK: - Download Image
-    func downloadUserImage(urlString: String) {
-        let imgUrl:URL! = URL(string: urlString)
-        URLSession.shared.downloadTask(with: imgUrl, completionHandler: {
-            (location, reponse, error) -> Void in
-            if let data = try? Data(contentsOf: imgUrl){
-                DispatchQueue.main.async(execute: { () -> Void in
-                    let img: UIImage! = UIImage(data: data)
-                        self.profileImage.image = img
-                        self.profileImage.layer.cornerRadius = 50
-                        self.profileImage.clipsToBounds = true
-                })
-            }
-        }).resume()
-    }
-    
-    //MARK: - Login delegate
-    func resultsFromLogin(optiontype: String) {
-        if optiontype == "Success" {
-            setMenuLayoutUI()
-        }
+        return authorData.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
 
         // Configure the cell...
+        
+        let dataDict: [String:AnyObject] = authorData[indexPath.row] as! [String:AnyObject]
+        cell.titleLable.text = dataDict["author_name"] as? String
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -139,19 +132,14 @@ class MenuViewController: UITableViewController,loginDelegate {
     }
     */
 
-    
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        
-        if segue.identifier == "LoginSegue" {
-            let navigationCtrl: UINavigationController = segue.destination as! UINavigationController
-            let viewCtrl: LoginViewController = navigationCtrl.topViewController as! LoginViewController
-            viewCtrl.delegate = self
-        }
     }
+    */
 
 }

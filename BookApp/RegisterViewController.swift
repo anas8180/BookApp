@@ -15,6 +15,10 @@ class RegisterViewController: UIViewController {
     var task: URLSessionDownloadTask!
     var session: URLSession!
 
+    @IBOutlet weak var nameTxtFld: UITextField!
+    @IBOutlet weak var phoneTxtFld: UITextField!
+    @IBOutlet weak var passwordTxtFld: UITextField!
+    @IBOutlet weak var emailTxtFld: UITextField!
     @IBOutlet weak var submitBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +31,6 @@ class RegisterViewController: UIViewController {
         session = URLSession.shared
         task = URLSessionDownloadTask()
 
-        callApi(url: "http://noorkadal.co.in/bookapi.php?")
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,30 +40,34 @@ class RegisterViewController: UIViewController {
     
 
     @IBAction func submitTapped(_ sender: Any) {
+        
+        callApi(appendUrl: AllVariables.baseUrl)
     }
     @IBAction func loginTaped(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     
     // MARK: - Login API Call
-    func callApi(url: String) {
+    func callApi(appendUrl: String) {
         
-        var request = URLRequest(url: URL(string: url)!)
-        request.httpMethod = "GET"
-        request.addValue("public_user_login", forHTTPHeaderField: "status")
-        request.addValue("test", forHTTPHeaderField: "username")
-        request.addValue("test", forHTTPHeaderField: "userpass")
+        let url = String(appendUrl) + "status=public_user_register" + "&uname=" + String(nameTxtFld.text!) + "&uphone=" + String(phoneTxtFld.text!) + "&uemail=" + String(emailTxtFld.text!) + "&upass=" + String(passwordTxtFld.text!)
+        let urlString = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+
+        var request = URLRequest(url: URL(string: urlString!)!)
+        request.httpMethod = "POST"
 
         task = session.downloadTask(with: request, completionHandler: { (location: URL?, response: URLResponse?, error: Error?) -> Void in
             
             if location != nil{
                 let data:Data! = try? Data(contentsOf: location!)
-                do{
-                    let dic = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves) as AnyObject
-                    print(dic)
-                }catch{
-                    print("something went wrong, try again")
+                
+                do {
+                    let resultJson = try JSONSerialization.jsonObject(with: data!, options: []) as? [String:AnyObject]
+                    print("Result",resultJson!)
+                } catch {
+                    print("Error -> \(error)")
                 }
+
             }
         })
         task.resume()

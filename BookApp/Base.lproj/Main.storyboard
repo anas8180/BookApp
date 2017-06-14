@@ -74,28 +74,28 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KYz-fj-YGB">
-                                                    <rect key="frame" x="70" y="0.0" width="100" height="100"/>
+                                                    <rect key="frame" x="70" y="40" width="100" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="6nd-GZ-U1a"/>
                                                         <constraint firstAttribute="width" constant="100" id="CkU-18-XUj"/>
                                                     </constraints>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bq-p0-Bc2">
-                                                    <rect key="frame" x="80" y="108" width="80" height="33"/>
+                                                    <rect key="frame" x="80" y="148" width="80" height="33"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <state key="normal" title="உள் நுழை ">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="1Lc-nB-scO" kind="presentation" id="LPk-9N-ZoO"/>
+                                                        <segue destination="1Lc-nB-scO" kind="presentation" identifier="LoginSegue" id="LPk-9N-ZoO"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="KYz-fj-YGB" firstAttribute="leading" secondItem="kk5-vp-XMc" secondAttribute="leading" constant="70" id="1vC-hg-NsA"/>
-                                                <constraint firstItem="KYz-fj-YGB" firstAttribute="top" secondItem="kk5-vp-XMc" secondAttribute="top" id="4LY-pF-K2P"/>
                                                 <constraint firstItem="9bq-p0-Bc2" firstAttribute="top" secondItem="KYz-fj-YGB" secondAttribute="bottom" constant="8" id="4g2-oQ-E6z"/>
                                                 <constraint firstItem="9bq-p0-Bc2" firstAttribute="centerX" secondItem="KYz-fj-YGB" secondAttribute="centerX" id="MuF-FL-HDr"/>
+                                                <constraint firstItem="KYz-fj-YGB" firstAttribute="centerY" secondItem="kk5-vp-XMc" secondAttribute="centerY" id="dVf-xn-Cxb"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.11372549019607843" green="0.070588235294117646" blue="0.011764705882352941" alpha="1" colorSpace="calibratedRGB"/>
@@ -257,6 +257,10 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="kog-R4-yi6"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="loginBtn" destination="9bq-p0-Bc2" id="Fkb-Lc-iXx"/>
+                        <outlet property="profileImage" destination="KYz-fj-YGB" id="RCC-3H-6F4"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eh5-nf-KZJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -299,6 +303,9 @@
                                 <color key="textColor" red="0.1137254902" green="0.070588235289999995" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="i8A-5x-75d" id="bLw-5T-fYb"/>
+                                </connections>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d3s-ej-iZG">
                                 <rect key="frame" x="47" y="140" width="281" height="1"/>
@@ -315,6 +322,9 @@
                                 <color key="textColor" red="0.1137254902" green="0.070588235289999995" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="i8A-5x-75d" id="ae9-aE-mah"/>
+                                </connections>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="00b-3J-vR8">
                                 <rect key="frame" x="47" y="189" width="281" height="1"/>
@@ -382,7 +392,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="passwrodTxtFld" destination="se1-6g-BNV" id="e45-kY-DrL"/>
                         <outlet property="submitBtn" destination="FG9-qH-X9X" id="pvO-Ym-6W6"/>
+                        <outlet property="usernameTxtFld" destination="m7q-vh-JrE" id="krU-fr-Buh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TKC-L2-IEE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -401,7 +413,7 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="மின்னஞ்சல் முகவரி " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T2P-nV-vMR">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="பெயர்" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T2P-nV-vMR">
                                 <rect key="frame" x="16" y="107" width="343" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="POM-IM-yWp"/>
@@ -409,6 +421,9 @@
                                 <color key="textColor" red="0.1137254902" green="0.070588235289999995" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="nZA-CK-iEn" id="2ig-Jl-hYe"/>
+                                </connections>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bUl-Ig-lMb">
                                 <rect key="frame" x="47" y="147" width="281" height="1"/>
@@ -417,7 +432,7 @@
                                     <constraint firstAttribute="height" constant="1" id="hGs-2J-re9"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="கடவுச்சொல்" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nfY-Oa-AiJ">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="அலைபேசி" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nfY-Oa-AiJ">
                                 <rect key="frame" x="16" y="156" width="343" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="Inv-zT-GDb"/>
@@ -425,6 +440,9 @@
                                 <color key="textColor" red="0.1137254902" green="0.070588235289999995" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="nZA-CK-iEn" id="NDY-vh-1RQ"/>
+                                </connections>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SyT-3N-1jz">
                                 <rect key="frame" x="47" y="196" width="281" height="1"/>
@@ -441,6 +459,9 @@
                                 <color key="textColor" red="0.1137254902" green="0.070588235289999995" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="nZA-CK-iEn" id="fmT-w9-L8i"/>
+                                </connections>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rc6-G9-OfF">
                                 <rect key="frame" x="47" y="248" width="281" height="1"/>
@@ -457,6 +478,9 @@
                                 <color key="textColor" red="0.1137254902" green="0.070588235289999995" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="nZA-CK-iEn" id="kgV-ql-FPh"/>
+                                </connections>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A97-eD-vEg">
                                 <rect key="frame" x="47" y="297" width="281" height="1"/>
@@ -522,6 +546,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emailTxtFld" destination="hJd-cb-wWy" id="Z8m-TE-lcf"/>
+                        <outlet property="nameTxtFld" destination="T2P-nV-vMR" id="60J-Fl-i8v"/>
+                        <outlet property="passwordTxtFld" destination="Pta-bB-hLP" id="GUE-Ex-ZYf"/>
+                        <outlet property="phoneTxtFld" destination="nfY-Oa-AiJ" id="vec-4Z-jsp"/>
                         <outlet property="submitBtn" destination="s4w-Ur-CKK" id="fcT-A2-lDb"/>
                     </connections>
                 </viewController>
@@ -631,6 +659,418 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="87.200000000000003" y="114.69265367316342"/>
+        </scene>
+        <!--All Books View Controller-->
+        <scene sceneID="FDQ-ah-uZJ">
+            <objects>
+                <viewController storyboardIdentifier="நூல்கள்" id="0w3-OE-HPD" customClass="AllBooksViewController" customModule="BookApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="peK-QV-qKL"/>
+                        <viewControllerLayoutGuide type="bottom" id="BOu-fz-vSa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Sld-E3-GdD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygo-TC-APF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="RRl-mg-XD4"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="0w3-OE-HPD" id="wgk-DF-BfP"/>
+                                </connections>
+                            </scrollView>
+                            <pageControl opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="w6G-fV-f5x">
+                                <rect key="frame" x="0.0" y="113" width="375" height="37"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="pageIndicatorTintColor" red="0.1137254902" green="0.070588235289999995" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="currentPageIndicatorTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="pageChanges:" destination="0w3-OE-HPD" eventType="valueChanged" id="SLH-d3-Cab"/>
+                                </connections>
+                            </pageControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KAn-cl-fTS">
+                                <rect key="frame" x="16" y="122.5" width="327" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="psW-N8-SWw">
+                                <rect key="frame" x="0.0" y="150" width="375" height="1"/>
+                                <color key="backgroundColor" red="0.1137254902" green="0.070588235289999995" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="rm6-2Q-SAl"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BcP-22-kEi">
+                                <rect key="frame" x="0.0" y="151" width="375" height="45"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="சலுகை விலை நூல்கள் " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o3G-6c-Jn0">
+                                        <rect key="frame" x="8" y="12" width="171" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.1137254902" green="0.070588235289999995" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WhZ-Oj-N1B">
+                                        <rect key="frame" x="317" y="6" width="50" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="மேலும்">
+                                            <color key="titleColor" red="0.1137254902" green="0.070588235289999995" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="o3G-6c-Jn0" firstAttribute="centerY" secondItem="BcP-22-kEi" secondAttribute="centerY" id="337-BM-UJ5"/>
+                                    <constraint firstItem="o3G-6c-Jn0" firstAttribute="leading" secondItem="BcP-22-kEi" secondAttribute="leading" constant="8" id="53l-yJ-nks"/>
+                                    <constraint firstAttribute="height" constant="45" id="TAA-6G-tnK"/>
+                                    <constraint firstItem="WhZ-Oj-N1B" firstAttribute="centerY" secondItem="BcP-22-kEi" secondAttribute="centerY" id="pKQ-bb-7pe"/>
+                                    <constraint firstAttribute="trailing" secondItem="WhZ-Oj-N1B" secondAttribute="trailing" constant="8" id="yva-Px-tto"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wa9-Ox-YgC">
+                                <rect key="frame" x="0.0" y="196" width="375" height="1"/>
+                                <color key="backgroundColor" red="0.1137254902" green="0.070588235289999995" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Qtd-bW-m8g"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="s3W-rE-SkL">
+                                <rect key="frame" x="0.0" y="205" width="375" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="itt-Sx-PIf"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QZ3-aM-Nnd">
+                                    <size key="itemSize" width="100" height="150"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="SEN-th-Bse" customClass="BookCollectionViewCell" customModule="BookApp" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="25" width="100" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ix0-av-rfo">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="120" id="FCO-hg-SKR"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWu-Tu-U52">
+                                                    <rect key="frame" x="0.0" y="125" width="100" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJq-2P-GFL">
+                                                    <rect key="frame" x="0.0" y="151" width="100" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="tWu-Tu-U52" secondAttribute="trailing" id="0en-LX-vRc"/>
+                                            <constraint firstItem="Ix0-av-rfo" firstAttribute="leading" secondItem="SEN-th-Bse" secondAttribute="leading" id="0md-os-05f"/>
+                                            <constraint firstItem="Ix0-av-rfo" firstAttribute="top" secondItem="SEN-th-Bse" secondAttribute="top" id="89A-6H-5Sn"/>
+                                            <constraint firstItem="CJq-2P-GFL" firstAttribute="leading" secondItem="SEN-th-Bse" secondAttribute="leading" id="aul-m5-8yu"/>
+                                            <constraint firstItem="CJq-2P-GFL" firstAttribute="top" secondItem="tWu-Tu-U52" secondAttribute="bottom" constant="5" id="brw-LD-bbQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ix0-av-rfo" secondAttribute="trailing" id="nfe-Tg-MGT"/>
+                                            <constraint firstItem="tWu-Tu-U52" firstAttribute="leading" secondItem="SEN-th-Bse" secondAttribute="leading" id="pYS-aQ-4EQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="CJq-2P-GFL" secondAttribute="trailing" id="wmo-dl-hYG"/>
+                                            <constraint firstItem="tWu-Tu-U52" firstAttribute="top" secondItem="Ix0-av-rfo" secondAttribute="bottom" constant="5" id="zEy-GF-dyq"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="bookTitleLable" destination="tWu-Tu-U52" id="LuF-BS-wAz"/>
+                                            <outlet property="priceLable" destination="CJq-2P-GFL" id="3sV-8L-j2i"/>
+                                            <outlet property="thumbImgView" destination="Ix0-av-rfo" id="ZOZ-03-Q2g"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="0w3-OE-HPD" id="igT-h1-raZ"/>
+                                    <outlet property="delegate" destination="0w3-OE-HPD" id="Jfy-aA-Dlf"/>
+                                </connections>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2xS-ZU-BfI">
+                                <rect key="frame" x="0.0" y="413" width="375" height="1"/>
+                                <color key="backgroundColor" red="0.1137254902" green="0.070588235289999995" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="70O-hq-9Qk"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="w6G-fV-f5x" firstAttribute="bottom" secondItem="ygo-TC-APF" secondAttribute="bottom" id="2cp-r0-l0w"/>
+                            <constraint firstItem="KAn-cl-fTS" firstAttribute="leading" secondItem="Sld-E3-GdD" secondAttribute="leading" constant="16" id="5pq-vl-Zey"/>
+                            <constraint firstItem="BcP-22-kEi" firstAttribute="top" secondItem="psW-N8-SWw" secondAttribute="bottom" id="77c-vi-PUV"/>
+                            <constraint firstItem="KAn-cl-fTS" firstAttribute="centerY" secondItem="w6G-fV-f5x" secondAttribute="centerY" id="As4-ux-QuY"/>
+                            <constraint firstAttribute="trailing" secondItem="w6G-fV-f5x" secondAttribute="trailing" id="BcL-GL-q0e"/>
+                            <constraint firstItem="psW-N8-SWw" firstAttribute="leading" secondItem="Sld-E3-GdD" secondAttribute="leading" id="FKm-uY-8kd"/>
+                            <constraint firstItem="wa9-Ox-YgC" firstAttribute="leading" secondItem="Sld-E3-GdD" secondAttribute="leading" id="Ght-JS-roH"/>
+                            <constraint firstAttribute="trailing" secondItem="KAn-cl-fTS" secondAttribute="trailing" constant="32" id="IfO-GK-htb"/>
+                            <constraint firstAttribute="trailing" secondItem="2xS-ZU-BfI" secondAttribute="trailing" id="MS9-VD-YaO"/>
+                            <constraint firstAttribute="trailing" secondItem="s3W-rE-SkL" secondAttribute="trailing" id="MrQ-1y-VLb"/>
+                            <constraint firstAttribute="trailing" secondItem="psW-N8-SWw" secondAttribute="trailing" id="OnX-WH-oBX"/>
+                            <constraint firstItem="s3W-rE-SkL" firstAttribute="top" secondItem="wa9-Ox-YgC" secondAttribute="bottom" constant="8" id="aQM-oW-fI4"/>
+                            <constraint firstAttribute="trailing" secondItem="wa9-Ox-YgC" secondAttribute="trailing" id="bZp-P3-gYk"/>
+                            <constraint firstItem="psW-N8-SWw" firstAttribute="top" secondItem="w6G-fV-f5x" secondAttribute="bottom" id="hnO-Ud-QSz"/>
+                            <constraint firstItem="w6G-fV-f5x" firstAttribute="leading" secondItem="Sld-E3-GdD" secondAttribute="leading" id="jWL-Yu-nFR"/>
+                            <constraint firstAttribute="trailing" secondItem="BcP-22-kEi" secondAttribute="trailing" id="ld7-2X-ndk"/>
+                            <constraint firstItem="2xS-ZU-BfI" firstAttribute="top" secondItem="s3W-rE-SkL" secondAttribute="bottom" constant="8" id="mnO-OZ-uqc"/>
+                            <constraint firstItem="ygo-TC-APF" firstAttribute="leading" secondItem="Sld-E3-GdD" secondAttribute="leading" id="ov6-Uv-qiD"/>
+                            <constraint firstAttribute="trailing" secondItem="ygo-TC-APF" secondAttribute="trailing" id="p3S-Kv-Nq6"/>
+                            <constraint firstItem="2xS-ZU-BfI" firstAttribute="leading" secondItem="Sld-E3-GdD" secondAttribute="leading" id="p3Y-1e-KJf"/>
+                            <constraint firstItem="s3W-rE-SkL" firstAttribute="leading" secondItem="Sld-E3-GdD" secondAttribute="leading" id="pIa-9l-F5f"/>
+                            <constraint firstItem="ygo-TC-APF" firstAttribute="top" secondItem="Sld-E3-GdD" secondAttribute="top" id="pc8-Z6-1xI"/>
+                            <constraint firstItem="BcP-22-kEi" firstAttribute="leading" secondItem="Sld-E3-GdD" secondAttribute="leading" id="sUD-ks-Wgd"/>
+                            <constraint firstItem="wa9-Ox-YgC" firstAttribute="top" secondItem="BcP-22-kEi" secondAttribute="bottom" id="x7S-tU-723"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="booksCollectionView" destination="s3W-rE-SkL" id="QIp-sf-bd6"/>
+                        <outlet property="pageControl" destination="w6G-fV-f5x" id="Dcw-z3-aDg"/>
+                        <outlet property="scrollView" destination="ygo-TC-APF" id="FYa-oV-rR7"/>
+                        <outlet property="sliderTitle" destination="KAn-cl-fTS" id="0KJ-9X-zKC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mSi-TW-IxQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="765.60000000000002" y="115.59220389805098"/>
+        </scene>
+        <!--My Books View Controller-->
+        <scene sceneID="mPx-Zf-bLz">
+            <objects>
+                <tableViewController storyboardIdentifier="எனது நூல்கள்" id="l3p-dk-taB" customClass="MyBooksViewController" customModule="BookApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="4IU-IL-INf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="hWj-cI-iIg">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hWj-cI-iIg" id="lwz-9r-Aqv">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="l3p-dk-taB" id="ZzR-i3-kKA"/>
+                            <outlet property="delegate" destination="l3p-dk-taB" id="JmZ-pX-B4g"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wqB-d4-hxQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1446" y="115"/>
+        </scene>
+        <!--Authors View Controller-->
+        <scene sceneID="7Jr-zS-bM5">
+            <objects>
+                <tableViewController storyboardIdentifier="எழுத்தாளர்கள்" id="Nhs-3Z-3Db" customClass="AuthorsViewController" customModule="BookApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="TOk-0a-KyN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="2gT-cs-ycz" customClass="CustomTableViewCell" customModule="BookApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2gT-cs-ycz" id="ilc-fC-Y76">
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rze-nu-2lj">
+                                            <rect key="frame" x="8" y="11" width="326" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="rze-nu-2lj" secondAttribute="trailing" constant="8" id="UuX-5k-pZa"/>
+                                        <constraint firstItem="rze-nu-2lj" firstAttribute="leading" secondItem="ilc-fC-Y76" secondAttribute="leading" constant="8" id="rUU-7n-giH"/>
+                                        <constraint firstItem="rze-nu-2lj" firstAttribute="centerY" secondItem="ilc-fC-Y76" secondAttribute="centerY" id="u6l-O4-oUi"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="titleLable" destination="rze-nu-2lj" id="BCH-O5-Cyd"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Nhs-3Z-3Db" id="9Fj-yj-n4T"/>
+                            <outlet property="delegate" destination="Nhs-3Z-3Db" id="1ub-go-BaQ"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cbQ-c4-EK5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2133.5999999999999" y="114.69265367316342"/>
+        </scene>
+        <!--Publishers View Controller-->
+        <scene sceneID="mRZ-ki-uny">
+            <objects>
+                <tableViewController storyboardIdentifier="பதிப்பாளர்கள்" id="GEd-WY-OuL" customClass="PublishersViewController" customModule="BookApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="joR-Kk-7Ok">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="kz3-QQ-T58" customClass="CustomTableViewCell" customModule="BookApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kz3-QQ-T58" id="Cba-wx-pxT">
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVH-hv-eTZ">
+                                            <rect key="frame" x="8" y="11" width="326" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="wVH-hv-eTZ" secondAttribute="trailing" constant="8" id="9gI-Ef-Ph4"/>
+                                        <constraint firstItem="wVH-hv-eTZ" firstAttribute="leading" secondItem="Cba-wx-pxT" secondAttribute="leading" constant="8" id="SRT-S6-loO"/>
+                                        <constraint firstItem="wVH-hv-eTZ" firstAttribute="centerY" secondItem="Cba-wx-pxT" secondAttribute="centerY" id="kX9-BO-0fA"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="titleLable" destination="wVH-hv-eTZ" id="nzx-gi-lVW"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="GEd-WY-OuL" id="vmV-xx-6A4"/>
+                            <outlet property="delegate" destination="GEd-WY-OuL" id="EvV-Za-LNS"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BFa-gI-ejI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2797.5999999999999" y="114.69265367316342"/>
+        </scene>
+        <!--Book Category View Controller-->
+        <scene sceneID="uSV-Nf-wdx">
+            <objects>
+                <tableViewController storyboardIdentifier="புத்தக வகைகள்" id="KdC-u7-K3w" customClass="BookCategoryViewController" customModule="BookApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Elu-np-8Mm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="czo-Uj-zg0" customClass="CustomTableViewCell" customModule="BookApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="czo-Uj-zg0" id="W5q-8C-LEY">
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Snw-Pb-kkB">
+                                            <rect key="frame" x="8" y="11" width="326" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="Snw-Pb-kkB" secondAttribute="trailing" constant="8" id="GkZ-bq-40v"/>
+                                        <constraint firstItem="Snw-Pb-kkB" firstAttribute="leading" secondItem="W5q-8C-LEY" secondAttribute="leading" constant="8" id="hb4-xO-Bur"/>
+                                        <constraint firstItem="Snw-Pb-kkB" firstAttribute="centerY" secondItem="W5q-8C-LEY" secondAttribute="centerY" id="vZi-ld-DpH"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="titleLable" destination="Snw-Pb-kkB" id="FGY-QM-baQ"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="KdC-u7-K3w" id="zn4-CK-zos"/>
+                            <outlet property="delegate" destination="KdC-u7-K3w" id="q45-MZ-OfR"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ONP-kS-rV3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3448.8000000000002" y="114.69265367316342"/>
+        </scene>
+        <!--News View Controller-->
+        <scene sceneID="0vT-Kv-ZZm">
+            <objects>
+                <tableViewController storyboardIdentifier="தகவல்கள்" id="Aib-vH-r1i" customClass="NewsViewController" customModule="BookApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="d5u-Ei-XkX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="hYs-uF-S44" customClass="CustomTableViewCell" customModule="BookApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hYs-uF-S44" id="0zm-Cg-9fB">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Aib-vH-r1i" id="Xew-NO-FeF"/>
+                            <outlet property="delegate" destination="Aib-vH-r1i" id="f9d-a8-BhC"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QdA-f1-m8Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4092" y="115"/>
+        </scene>
+        <!--Story View Controller-->
+        <scene sceneID="Cdt-zg-ahp">
+            <objects>
+                <tableViewController storyboardIdentifier="இன்றைய கதைகள்" id="Wvg-fc-95B" customClass="StoryViewController" customModule="BookApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="GrV-FJ-0w9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Tgz-Ay-v6U" customClass="CustomTableViewCell" customModule="BookApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tgz-Ay-v6U" id="EeJ-59-pcA">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Wvg-fc-95B" id="l43-1M-GgE"/>
+                            <outlet property="delegate" destination="Wvg-fc-95B" id="TKH-Ul-1wW"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jAm-AR-oKm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4761" y="115"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="ABA-RE-6Zf">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="1BI-r6-DHU" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mu1-rM-3p9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="87" y="-536"/>
         </scene>
     </scenes>
     <resources>
