@@ -29,6 +29,10 @@
 		C9ADEB161EEFFB2E00D5BDC2 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ADEB151EEFFB2E00D5BDC2 /* NewsViewController.swift */; };
 		C9ADEB181EEFFB3B00D5BDC2 /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ADEB171EEFFB3B00D5BDC2 /* StoryViewController.swift */; };
 		C9ADEB1A1EEFFB5F00D5BDC2 /* MyBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ADEB191EEFFB5F00D5BDC2 /* MyBooksViewController.swift */; };
+		CA0089201EF15507007B1C1A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA00891F1EF15507007B1C1A /* ProfileViewController.swift */; };
+		CA0089261EF15820007B1C1A /* AboutImg.png in Resources */ = {isa = PBXBuildFile; fileRef = CA0089241EF15820007B1C1A /* AboutImg.png */; };
+		CA0089271EF15820007B1C1A /* Default_Profile.png in Resources */ = {isa = PBXBuildFile; fileRef = CA0089251EF15820007B1C1A /* Default_Profile.png */; };
+		CA0089291EF15A8A007B1C1A /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0089281EF15A8A007B1C1A /* AboutUsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +83,10 @@
 		C9ADEB151EEFFB2E00D5BDC2 /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		C9ADEB171EEFFB3B00D5BDC2 /* StoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
 		C9ADEB191EEFFB5F00D5BDC2 /* MyBooksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBooksViewController.swift; sourceTree = "<group>"; };
+		CA00891F1EF15507007B1C1A /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		CA0089241EF15820007B1C1A /* AboutImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AboutImg.png; sourceTree = "<group>"; };
+		CA0089251EF15820007B1C1A /* Default_Profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default_Profile.png; sourceTree = "<group>"; };
+		CA0089281EF15A8A007B1C1A /* AboutUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +137,7 @@
 		C93554BD1EEBD12400BFD19F /* BookApp */ = {
 			isa = PBXGroup;
 			children = (
+				CA0089231EF15820007B1C1A /* Images */,
 				C93554F81EEC078E00BFD19F /* Custom Cells */,
 				C93554EC1EEBDAA600BFD19F /* SWRevealViewController */,
 				C93554F11EEBDBEA00BFD19F /* ViewControllers */,
@@ -184,6 +193,8 @@
 				C9ADEB131EEFFB1000D5BDC2 /* BookCategoryViewController.swift */,
 				C9ADEB151EEFFB2E00D5BDC2 /* NewsViewController.swift */,
 				C9ADEB171EEFFB3B00D5BDC2 /* StoryViewController.swift */,
+				CA00891F1EF15507007B1C1A /* ProfileViewController.swift */,
+				CA0089281EF15A8A007B1C1A /* AboutUsViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -196,6 +207,15 @@
 				C9ADEB0D1EEFF9D800D5BDC2 /* CustomTableViewCell.swift */,
 			);
 			name = "Custom Cells";
+			sourceTree = "<group>";
+		};
+		CA0089231EF15820007B1C1A /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				CA0089241EF15820007B1C1A /* AboutImg.png */,
+				CA0089251EF15820007B1C1A /* Default_Profile.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,7 +332,9 @@
 				C93554C91EEBD12400BFD19F /* LaunchScreen.storyboard in Resources */,
 				C93554F71EEBE69900BFD19F /* DroidSansTamilBold.ttf in Resources */,
 				C93554C61EEBD12400BFD19F /* Assets.xcassets in Resources */,
+				CA0089261EF15820007B1C1A /* AboutImg.png in Resources */,
 				C93554C41EEBD12400BFD19F /* Main.storyboard in Resources */,
+				CA0089271EF15820007B1C1A /* Default_Profile.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,8 +366,10 @@
 				C93554BF1EEBD12400BFD19F /* AppDelegate.swift in Sources */,
 				C9ADEB101EEFFA0300D5BDC2 /* AuthorsViewController.swift in Sources */,
 				C99987491EED79E2004EBA1C /* RegisterViewController.swift in Sources */,
+				CA0089201EF15507007B1C1A /* ProfileViewController.swift in Sources */,
 				C9ADEB0C1EEFEB9F00D5BDC2 /* BookCollectionViewCell.swift in Sources */,
 				C93554F31EEBDC6700BFD19F /* MenuViewController.swift in Sources */,
+				CA0089291EF15A8A007B1C1A /* AboutUsViewController.swift in Sources */,
 				C9ADEB1A1EEFFB5F00D5BDC2 /* MyBooksViewController.swift in Sources */,
 				C93554F01EEBDACF00BFD19F /* SWRevealViewController.m in Sources */,
 				C9ADEB0E1EEFF9D800D5BDC2 /* CustomTableViewCell.swift in Sources */,
