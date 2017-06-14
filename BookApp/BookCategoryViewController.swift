@@ -10,33 +10,79 @@ import UIKit
 
 class BookCategoryViewController: UITableViewController {
 
+    var cache:NSCache<AnyObject, AnyObject>!
+    var task: URLSessionDownloadTask!
+    var session: URLSession!
+    var categoryData:[AnyObject]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        tableView.tableFooterView = UIView(frame: .zero)
+        
+        self.cache = NSCache()
+        session = URLSession.shared
+        task = URLSessionDownloadTask()
+        categoryData = []
+        
+        bookCategoryAPI()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    func bookCategoryAPI() {
+        
+        let url = String(AllVariables.baseUrl) + "status=allbookcategories"
+        let urlString = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        
+        var request = URLRequest(url: URL(string: urlString!)!)
+        request.httpMethod = "GET"
+        task = session.downloadTask(with: request, completionHandler: { (location: URL?, response: URLResponse?, error: Error?) -> Void in
+            
+            if location != nil{
+                let data:Data! = try? Data(contentsOf: location!)
+                do{
+                    let json = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves) as AnyObject
+                    if json["allcategory"] != nil {
+                        self.categoryData = []
+                        self.categoryData = json.value(forKey: "allcategory") as? [AnyObject]
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                    }
+                }catch{
+                    print("Error \(error)")
+                }
+            }
+        })
+        task.resume()
+    }
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        if categoryData == nil{
+            
+            return 0
+        }
+        return categoryData!.count
     }
-
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
+        
+        let dataDict: [String:AnyObject] = categoryData[indexPath.row] as! [String:AnyObject]
+        cell.titleLable.text = dataDict["category_name"] as? String
+        
+        return cell
+    }
+    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
