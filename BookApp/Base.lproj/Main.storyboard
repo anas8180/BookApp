@@ -614,7 +614,7 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nif-zc-0C2">
-                                                    <rect key="frame" x="54" y="29.5" width="37" height="17.5"/>
+                                                    <rect key="frame" x="54.5" y="29.5" width="37" height="17.5"/>
                                                     <fontDescription key="fontDescription" name="DroidSansTamil-Bold" family="Droid Sans Tamil" pointSize="14"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -1012,18 +1012,64 @@
         <scene sceneID="0vT-Kv-ZZm">
             <objects>
                 <tableViewController storyboardIdentifier="தகவல்கள்" id="Aib-vH-r1i" customClass="NewsViewController" customModule="BookApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="d5u-Ei-XkX">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="187" sectionHeaderHeight="28" sectionFooterHeight="28" id="d5u-Ei-XkX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="hYs-uF-S44" customClass="CustomTableViewCell" customModule="BookApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="185" id="hYs-uF-S44" customClass="CustomTableViewCell" customModule="BookApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="185"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hYs-uF-S44" id="0zm-Cg-9fB">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="184.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gb1-cN-Aq3">
+                                            <rect key="frame" x="8" y="8" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUR-FC-ixM">
+                                            <rect key="frame" x="8" y="37" width="359" height="75"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="75" id="V1c-7v-eIx"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-Noorkadal" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fve-yM-8Pa">
+                                            <rect key="frame" x="290" y="120" width="77" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5Y-yh-cL7">
+                                            <rect key="frame" x="274" y="146" width="93" height="30"/>
+                                            <state key="normal" title="மேலும் படிக்க ">
+                                                <color key="titleColor" red="0.1137254902" green="0.070588235289999995" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="fve-yM-8Pa" secondAttribute="trailing" constant="8" id="1k6-Ev-8fi"/>
+                                        <constraint firstAttribute="trailing" secondItem="o5Y-yh-cL7" secondAttribute="trailing" constant="8" id="Bw5-Ub-ude"/>
+                                        <constraint firstItem="o5Y-yh-cL7" firstAttribute="top" secondItem="fve-yM-8Pa" secondAttribute="bottom" constant="8" id="Qhm-Vp-W8K"/>
+                                        <constraint firstItem="gb1-cN-Aq3" firstAttribute="leading" secondItem="0zm-Cg-9fB" secondAttribute="leading" constant="8" id="VtU-OV-Yow"/>
+                                        <constraint firstItem="gb1-cN-Aq3" firstAttribute="top" secondItem="0zm-Cg-9fB" secondAttribute="top" constant="8" id="bUR-Lj-iR0"/>
+                                        <constraint firstItem="fve-yM-8Pa" firstAttribute="top" secondItem="wUR-FC-ixM" secondAttribute="bottom" constant="8" id="cj1-cv-MfS"/>
+                                        <constraint firstAttribute="trailing" secondItem="wUR-FC-ixM" secondAttribute="trailing" constant="8" id="fnV-Ic-XXJ"/>
+                                        <constraint firstItem="wUR-FC-ixM" firstAttribute="top" secondItem="gb1-cN-Aq3" secondAttribute="bottom" constant="8" id="i8R-VA-mLh"/>
+                                        <constraint firstItem="wUR-FC-ixM" firstAttribute="leading" secondItem="0zm-Cg-9fB" secondAttribute="leading" constant="8" id="qvP-wK-mwB"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descLable" destination="wUR-FC-ixM" id="lut-Bq-nCB"/>
+                                    <outlet property="moreButton" destination="o5Y-yh-cL7" id="iNL-KJ-cqh"/>
+                                    <outlet property="titleLable" destination="gb1-cN-Aq3" id="zWF-qW-XOG"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1034,24 +1080,72 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QdA-f1-m8Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4092" y="115"/>
+            <point key="canvasLocation" x="4092" y="114.69265367316342"/>
         </scene>
         <!--Story View Controller-->
         <scene sceneID="Cdt-zg-ahp">
             <objects>
                 <tableViewController storyboardIdentifier="இன்றைய கதைகள்" id="Wvg-fc-95B" customClass="StoryViewController" customModule="BookApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="GrV-FJ-0w9">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="155" sectionHeaderHeight="28" sectionFooterHeight="28" id="GrV-FJ-0w9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Tgz-Ay-v6U" customClass="CustomTableViewCell" customModule="BookApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="155" id="Tgz-Ay-v6U" customClass="CustomTableViewCell" customModule="BookApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="155"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tgz-Ay-v6U" id="EeJ-59-pcA">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="154.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PhU-Wm-zAG">
+                                            <rect key="frame" x="8" y="8" width="100" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="OBu-sh-kf3"/>
+                                                <constraint firstAttribute="height" constant="100" id="zg5-Hb-eDC"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3Y-PT-Aw2">
+                                            <rect key="frame" x="116" y="8" width="251" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="diE-HS-6X1">
+                                            <rect key="frame" x="116" y="37" width="251" height="71"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="71" id="yA4-PQ-G6Y"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2t4-OQ-uwi">
+                                            <rect key="frame" x="274" y="116" width="93" height="30"/>
+                                            <state key="normal" title="மேலும் படிக்க ">
+                                                <color key="titleColor" red="0.1137254902" green="0.070588235289999995" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="2t4-OQ-uwi" secondAttribute="trailing" constant="8" id="8Gf-Jr-ONh"/>
+                                        <constraint firstItem="PhU-Wm-zAG" firstAttribute="leading" secondItem="EeJ-59-pcA" secondAttribute="leading" constant="8" id="BaL-zL-E5F"/>
+                                        <constraint firstItem="diE-HS-6X1" firstAttribute="leading" secondItem="PhU-Wm-zAG" secondAttribute="trailing" constant="8" id="EiO-8O-WpZ"/>
+                                        <constraint firstItem="O3Y-PT-Aw2" firstAttribute="top" secondItem="PhU-Wm-zAG" secondAttribute="top" id="G3S-9a-cXU"/>
+                                        <constraint firstItem="diE-HS-6X1" firstAttribute="top" secondItem="O3Y-PT-Aw2" secondAttribute="bottom" constant="8" id="PS3-PF-Ols"/>
+                                        <constraint firstItem="PhU-Wm-zAG" firstAttribute="top" secondItem="EeJ-59-pcA" secondAttribute="top" constant="8" id="bkG-Ro-hHz"/>
+                                        <constraint firstItem="2t4-OQ-uwi" firstAttribute="top" secondItem="diE-HS-6X1" secondAttribute="bottom" constant="8" id="bwW-SV-n2h"/>
+                                        <constraint firstAttribute="trailing" secondItem="diE-HS-6X1" secondAttribute="trailing" constant="8" id="idD-8P-ata"/>
+                                        <constraint firstAttribute="trailing" secondItem="O3Y-PT-Aw2" secondAttribute="trailing" constant="8" id="jyH-Iq-067"/>
+                                        <constraint firstItem="O3Y-PT-Aw2" firstAttribute="leading" secondItem="PhU-Wm-zAG" secondAttribute="trailing" constant="8" id="ruc-ex-QWp"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descLable" destination="diE-HS-6X1" id="j4j-B9-57k"/>
+                                    <outlet property="moreButton" destination="2t4-OQ-uwi" id="AEs-gW-Cnp"/>
+                                    <outlet property="thumbImgView" destination="PhU-Wm-zAG" id="0xE-ag-TRM"/>
+                                    <outlet property="titleLable" destination="O3Y-PT-Aw2" id="NLc-Cu-O1S"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1062,7 +1156,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jAm-AR-oKm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4761" y="115"/>
+            <point key="canvasLocation" x="4760.8000000000002" y="114.69265367316342"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="ABA-RE-6Zf">

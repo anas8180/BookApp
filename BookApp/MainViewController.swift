@@ -37,7 +37,6 @@ class MainViewController: UIViewController,UICollectionViewDelegate,UICollection
         
         
         topBarItems = ["நூல்கள்","எனது நூல்கள்","எழுத்தாளர்கள்","பதிப்பாளர்கள்","புத்தக வகைகள்","தகவல்கள்","இன்றைய கதைகள்"]
-        topBarItems = ["நூல்கள்","எனது நூல்கள்","எழுத்தாளர்கள்"]
         
         let vc1 = self.storyboard?.instantiateViewController(withIdentifier: "நூல்கள்")
         let vc2 = self.storyboard?.instantiateViewController(withIdentifier: "எனது நூல்கள்")

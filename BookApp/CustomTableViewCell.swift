@@ -11,6 +11,9 @@ import UIKit
 class CustomTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLable: UILabel!
+    @IBOutlet weak var descLable: UILabel!
+    @IBOutlet weak var moreButton: UIButton!
+    @IBOutlet weak var thumbImgView: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
