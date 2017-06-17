@@ -12,7 +12,10 @@ class ProfileViewController: UIViewController {
 
     @IBOutlet var profileImg: UIImageView!
     @IBOutlet var profileName: UILabel!
+<<<<<<< HEAD
     
+=======
+>>>>>>> c0f3812e54d90e2bd15804b975ae05bf5de45be3
     override func viewDidLoad() {
         super.viewDidLoad()
 

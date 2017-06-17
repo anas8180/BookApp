@@ -82,8 +82,13 @@ class BookCategoryViewController: UITableViewController {
         
         return cell
     }
+<<<<<<< HEAD
     
     
+=======
+
+
+>>>>>>> c0f3812e54d90e2bd15804b975ae05bf5de45be3
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
