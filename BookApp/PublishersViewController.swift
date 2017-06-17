@@ -59,11 +59,9 @@ class PublishersViewController: UITableViewController {
         })
         task.resume()
     }
-<<<<<<< HEAD
+ 
     
-=======
-
->>>>>>> c0f3812e54d90e2bd15804b975ae05bf5de45be3
+ 
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -77,7 +75,7 @@ class PublishersViewController: UITableViewController {
         }
         
         return publishersData.count
-<<<<<<< HEAD
+ 
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -87,8 +85,8 @@ class PublishersViewController: UITableViewController {
         cell.titleLable.text = dataDict["publisher_name"] as? String
         
         return cell
-=======
->>>>>>> c0f3812e54d90e2bd15804b975ae05bf5de45be3
+ 
+ 
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
