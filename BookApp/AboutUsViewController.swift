@@ -8,7 +8,7 @@
 
 import UIKit
 
-<<<<<<< HEAD
+ 
 class AboutUsViewController: UIViewController,UIScrollViewDelegate {
 
      @IBOutlet var aboutusLabel: UILabel!
@@ -20,6 +20,7 @@ class AboutUsViewController: UIViewController,UIScrollViewDelegate {
     var pageScrollView: UIScrollView!
     
     @IBOutlet var scrollView: UIScrollView!
+     
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,24 +32,16 @@ class AboutUsViewController: UIViewController,UIScrollViewDelegate {
         
                 pageScrollView = scrollView!
         pageScrollView.delegate = self
-        
-=======
-class AboutUsViewController: UIViewController {
-
-     @IBOutlet var aboutusLabel: UILabel!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
->>>>>>> c0f3812e54d90e2bd15804b975ae05bf5de45be3
+         
+ 
+ 
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-<<<<<<< HEAD
+ 
     func authorAPI() {
         
         let url = String(AllVariables.baseUrl) + "status=aboutus"
@@ -78,22 +71,22 @@ class AboutUsViewController: UIViewController {
         task.resume()
     }
 
-    @IBAction func backTapped(_ sender: Any) {
+   // @IBAction func backTapped(_ sender: Any) {
         
-=======
+ 
     @IBAction func backTapped(_ sender: Any) {
->>>>>>> c0f3812e54d90e2bd15804b975ae05bf5de45be3
+ 
         dismiss(animated: true, completion: nil)
     }
 
     /*
-<<<<<<< HEAD
+ 
      
      
      self.userNameLbl.text = (dataDict as AnyObject).object(forKey: "name") as? String
      
-=======
->>>>>>> c0f3812e54d90e2bd15804b975ae05bf5de45be3
+ 
+ 
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
