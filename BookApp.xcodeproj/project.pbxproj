@@ -241,6 +241,7 @@
 			children = (
 				CA00892F1EF165D8007B1C1A /* AboutImg.png */,
 				CA0089301EF165D8007B1C1A /* Default_Profile.png */,
+			};
  
 		CA0089231EF15820007B1C1A /* Images */ = {
 			isa = PBXGroup;
