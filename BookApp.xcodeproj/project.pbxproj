@@ -33,6 +33,7 @@
 		CA00892D1EF165CC007B1C1A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA00892B1EF165CC007B1C1A /* ProfileViewController.swift */; };
 		CA0089311EF165D8007B1C1A /* AboutImg.png in Resources */ = {isa = PBXBuildFile; fileRef = CA00892F1EF165D8007B1C1A /* AboutImg.png */; };
 		CA0089321EF165D8007B1C1A /* Default_Profile.png in Resources */ = {isa = PBXBuildFile; fileRef = CA0089301EF165D8007B1C1A /* Default_Profile.png */; };
+		CA8DFC341EF3B13500219AD1 /* PublishersDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8DFC331EF3B13500219AD1 /* PublishersDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		CA00892B1EF165CC007B1C1A /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		CA00892F1EF165D8007B1C1A /* AboutImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AboutImg.png; sourceTree = "<group>"; };
 		CA0089301EF165D8007B1C1A /* Default_Profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default_Profile.png; sourceTree = "<group>"; };
+		CA8DFC331EF3B13500219AD1 /* PublishersDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishersDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +197,7 @@
 				C9ADEB171EEFFB3B00D5BDC2 /* StoryViewController.swift */,
 				CA00892B1EF165CC007B1C1A /* ProfileViewController.swift */,
 				CA00892A1EF165CC007B1C1A /* AboutUsViewController.swift */,
+				CA8DFC331EF3B13500219AD1 /* PublishersDetailViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				CA00892C1EF165CC007B1C1A /* AboutUsViewController.swift in Sources */,
 				C9ADEB0A1EEFC93F00D5BDC2 /* AllBooksViewController.swift in Sources */,
 				C9ADEB161EEFFB2E00D5BDC2 /* NewsViewController.swift in Sources */,
+				CA8DFC341EF3B13500219AD1 /* PublishersDetailViewController.swift in Sources */,
 				C93554FA1EEC07B100BFD19F /* TopBarCollectionViewCell.swift in Sources */,
 				C93554F51EEBDC8300BFD19F /* MainViewController.swift in Sources */,
 			);
